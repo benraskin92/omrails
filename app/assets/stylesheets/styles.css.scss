@@ -1,3 +1,5 @@
+$btnPrimaryBackground: green;
+
 @import 'bootstrap';
 
 body {
@@ -7,9 +9,9 @@ body {
 @import 'bootstrap-responsive';
 
 .footer {
-	margin-top: 50px;
-	color: $grayLight;
-	a {
-		color: $gray;
-	}
+	margin-top: 60px;
+	color: gray;
+	position: fixed;
+	bottom: 0;
+	z-index:999999;
 }
