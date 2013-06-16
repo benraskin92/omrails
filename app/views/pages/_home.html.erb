@@ -1,3 +1,7 @@
+<% if user_signed_in? %>
+<h1>Welcome <%= current_user.name %>!</h1>
+
+<% else %>
 <div class="hero-unit">
 <h1>The Food Plate</h1> 
 
@@ -10,3 +14,4 @@
 <p>
 	<%= link_to "Sign Up Now", new_user_registration_path, class: "btn btn-primary btn-medium" %>
 </p>
+<% end %>

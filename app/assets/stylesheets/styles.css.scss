@@ -4,16 +4,16 @@ $btnPrimaryBackground: green;
 
 body {
 	padding-top: 60px;
+    background-color: gainsboro;
 }
 
 @import 'bootstrap-responsive';
 
 .footer {
 	margin-top: 60px;
-	color: gray;
+	color: black;
 	position: fixed;
 	bottom: 0;
-	z-index:999999;
 }
 
 /* Required for jQuery Masonry */
@@ -29,6 +29,7 @@ body {
     border-radius: 5px;
     box-shadow: 1px 1px 10px #444;
     width: 214px;
+    background-color: darken(oldlace, 20%);
 }
 
 .box img {
@@ -40,4 +41,9 @@ body {
 
 .description {
     margin: 10px 0 5px;
+}
+
+.form-actions
+{
+    background-color: gainsboro;
 }
