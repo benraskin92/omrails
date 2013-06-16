@@ -1,10 +1,14 @@
 <div class="box">
 
-<%= image_tag post.image(:medium) %>
+<%= link_to (image_tag post.image(:medium)), post %>
 <p class="description">
 <%= post.description %>
 </p>
-<%= link_to 'Show', post %>
+<p>
+	<strong><i>
+		Posted by <%= post.user.name %>
+	</strong></i>
+</p>
 
 <% if current_user == post.user %>
 <p>
