@@ -1,7 +1,6 @@
 Omrails::Application.routes.draw do
   resources :posts
 
-
   devise_for :users
 
   get 'about' => 'pages#about'
@@ -9,6 +8,11 @@ Omrails::Application.routes.draw do
 
   root :to => 'posts#index'
 
+ resources :posts do
+     get :vote_up, :on => :member
+     resources :comments
+   end
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

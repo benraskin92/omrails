@@ -13,6 +13,10 @@
   <%= link_to 'Edit', edit_post_path(@post) %> |
   <% end %>
 	<%= link_to 'Back', posts_path %>
+	<p>
+		<%= link_to "Click to Vote Up", vote_up_post_path(@post), 
+			:method => :post %></br>
+	</p>
 		</div>
 	</div>
 </div>
