@@ -1,18 +1,28 @@
 Omrails::Application.routes.draw do
+  get "users/show"
+
   resources :posts
 
   devise_for :users
 
+  match 'users/:id' => 'users#show', as: :user
   get 'about' => 'pages#about'
   get 'contact' => 'pages#contact'
 
+
   root :to => 'posts#index'
 
- resources :posts do
-     get :vote_up, :on => :member
-     resources :comments
-   end
-  
+
+
+resources :posts do
+       member do
+       post :votefor
+       end
+end
+
+get 'tags/:tag', to: 'posts#index', as: :tag
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

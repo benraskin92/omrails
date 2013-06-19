@@ -4,8 +4,13 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.order("created_at desc")
+    
+    if params[:tag]
+      @posts = Post.tagged_with(params[:tag])
+    else
+  @posts = Post.order("created_at desc")
 
+end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
@@ -82,15 +87,21 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
-end
 
-  def vote_up
+def votefor
     begin
-      current_user.vote_for(@post = Post.find(params[:id]))
-      render :nothing => true, :status => 200
+      post = Post.find(params[:id])
+      current_user.vote_for(post)
+      @votes_total = post.votes_for
+      redirect_to :back
+      flash[:sucess] = "You have voted successfully"
+
     rescue ActiveRecord::RecordInvalid
-      render :nothing => true, :status => 404
+        redirect_to :back
+        flash[:error] = "You have already voted for this one"
     end
+
+  end
   end
 
 

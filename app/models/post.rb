@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :description, :image
+  attr_accessible :description, :image, :tag_list
 
   validates :description, presence: true
   validates :user_id, presence: true
@@ -9,8 +9,9 @@ class Post < ActiveRecord::Base
 
   belongs_to :user
   has_attached_file :image, styles: {medium: "320x240>"}
+  
+  acts_as_voteable
 
-	acts_as_voteable
-
+  acts_as_taggable
 
 end

@@ -1,5 +1,6 @@
 $btnPrimaryBackground: green;
 
+
 @import 'bootstrap';
 
 body {
@@ -7,14 +8,26 @@ body {
     background-color: gainsboro;
 }
 
+
+
 @import 'bootstrap-responsive';
 
 .footer {
-	margin-top: 60px;
-	color: black;
-	position: fixed;
-	bottom: 0;
+	padding-bottom: 25px;
+      height:16px;
+     background-repeat:no-repeat;
+       z-index:3;
+     width:1020px;
+      margin: 0 auto 0 auto;
+    text-align: left;
+
+   
 }
+
+.navbar-inner {
+  height: 40px; 
+}
+
 
 /* Required for jQuery Masonry */
 
@@ -47,3 +60,12 @@ body {
 {
     background-color: gainsboro;
 }
+
+.btn {
+      -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+}
+
+
+

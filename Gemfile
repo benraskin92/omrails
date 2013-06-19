@@ -6,6 +6,7 @@ gem 'devise'
 gem 'simple_form'
 gem "paperclip", "~> 3.0"
 gem 'thumbs_up'
+gem 'acts-as-taggable-on'
 
 
 group :development, :test do

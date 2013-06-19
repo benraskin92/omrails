@@ -6,8 +6,16 @@
 </p>
 <p>
 	<strong>
-		Posted by <%= post.user.name %>
+		Posted by <%= link_to post.user.name, post.user %>
 	</strong>
+</p>
+<p>
+		<%= "Total votes = #{post.votes.count}" %>
+</p>
+
+<p>
+	Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+
 </p>
 
 <% if current_user == post.user %>
@@ -17,5 +25,6 @@
 	<p>
 		<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
 	</p>
+
 <% end %>
 </div>

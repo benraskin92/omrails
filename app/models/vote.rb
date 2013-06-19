@@ -16,11 +16,10 @@ class Vote < ActiveRecord::Base
 
 end
 
-class User < ActiveRecord::Base
-  acts_as_voter
-end
-
 class Post < ActiveRecord::Base
   acts_as_voteable
 end
 
+class User < ActiveRecord::Base
+  acts_as_voter
+end
