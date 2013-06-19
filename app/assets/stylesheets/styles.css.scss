@@ -13,15 +13,10 @@ body {
 @import 'bootstrap-responsive';
 
 .footer {
-	padding-bottom: 25px;
-      height:16px;
-     background-repeat:no-repeat;
-       z-index:3;
-     width:1020px;
-      margin: 0 auto 0 auto;
-    text-align: left;
-
-   
+position:fixed;
+    bottom:0;
+    z-index:999999;
+  
 }
 
 .navbar-inner {
